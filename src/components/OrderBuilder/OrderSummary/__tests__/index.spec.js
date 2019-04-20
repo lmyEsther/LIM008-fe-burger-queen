@@ -11,7 +11,7 @@ describe('OrderSummary', () => {
       done();
     };
     const { getByTestId } = render(
-      <OrderSummary captureNameClient={captureNameClient} clientName="" products={[{}]} />,
+      <OrderSummary captureNameClient={captureNameClient} clientName="" products={[]} />,
     );
     const input = getByTestId('name-client');
     fireEvent.change(input, { target: { value: 'Pedro Perez' } });

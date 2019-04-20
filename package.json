@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "firebase": "^5.9.2",
-    "firebase-mock": "^2.2.10",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
@@ -15,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

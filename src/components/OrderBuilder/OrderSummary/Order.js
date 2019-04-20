@@ -5,7 +5,7 @@ import styles from './Order.module.css';
 const order = ({
   label, cant, subTotal, id,
 }) => (
-  <div className={styles.Card}>
+  <div className={styles.Card} data-testid="order">
     <h5
       data-testid={`${id}-label`}
     >

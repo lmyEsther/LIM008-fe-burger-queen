@@ -7,7 +7,7 @@ import db from '../../lib/firestore';
 
 const OrderBuilder = () => {
   const [products, setProducts] = useState([]);
-  const [clientName, setNameClient] = useState('');
+  const [clientName, setNameClient] = useState('Ingresa el Nombre del Cliente');
 
   const addProductHandler = (selectedID, selectedPrice, selectedLabel) => {
     setProducts(addProduct(products, selectedID, selectedPrice, selectedLabel));
@@ -19,14 +19,15 @@ const OrderBuilder = () => {
 
   const purchaseContinueHandler = () => {
     if (products !== [] && clientName !== '') {
-      db().collection('orders').add({
+      db().collection('/orders').add({
         products,
         clientName,
-        date: db.FieldValue.serverTimestamp(),
+        date: Date.now(),
       });
       setProducts([]);
       setNameClient('');
     } else {
+      // eslint-disable-next-line no-alert
       alert('Por favor, llena todos los campos para enviar la orden a cocina.');
     }
   };

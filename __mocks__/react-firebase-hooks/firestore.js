@@ -4,8 +4,8 @@ export const useCollection = (ref) => {
   const data = ref._data.__doc__;
   const docs = Object.keys(data).map(id => ({ id, data: () => data[id] }));
   return {
-    error: null,
-    loading: false,
+    error: 'Error505',
+    loading: true,
     value: { docs },
   };
 };

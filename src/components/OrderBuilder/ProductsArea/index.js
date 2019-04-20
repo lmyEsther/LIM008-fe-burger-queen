@@ -17,13 +17,13 @@ const ProductsArea = ({
     <div className={styles.productsArea}>
       <h3>Selecciona el producto de preferencia: </h3>
       {error && (
-      <strong>
+      <p data-testid="error">
 Error:
         {' '}
         {error}
-      </strong>
+      </p>
       )}
-      {loading && <Spinner />}
+      {loading && <Spinner dataid="spinner-loading">Valar Morghulis</Spinner>}
       {value && (
       <div>
         {value.docs.map(doc => (
