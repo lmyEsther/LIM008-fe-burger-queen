@@ -23,6 +23,7 @@ const OrderBuilder = () => {
         products,
         clientName,
         date: Date.now(),
+        totalAmount: estimateAmount(products),
       });
       setProducts([]);
       setNameClient('');
