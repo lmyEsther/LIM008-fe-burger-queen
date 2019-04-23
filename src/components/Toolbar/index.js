@@ -9,6 +9,7 @@ const toolbar = () => (
     <div className={styles.Logo}>
       <Logo />
     </div>
+    <h1>BURGER QUEEN</h1>
     <nav>
       <NavBar />
     </nav>

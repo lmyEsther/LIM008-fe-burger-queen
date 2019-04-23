@@ -12,6 +12,11 @@
     width: 100%;
 }
 
+.Toolbar h1 {
+    color: #7D0000;
+    padding-right: 20%;
+}
+
 .Logo {
     height: 100%;
 }

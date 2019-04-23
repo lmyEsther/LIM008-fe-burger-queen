@@ -9,27 +9,29 @@ const product = ({
   <div className={styles.Card}>
     <div className={styles.Container}>
       <h5 data-testid={`${id}-label`}>{label}</h5>
-      <h5>
-/S
+      <span>
+ ./S
         {' '}
         {price}
-      </h5>
-      <Button
-        dataid={`${id}-remove-button`}
-        clicked={() => remove(id)}
-        btnType="Danger"
-      >
-        {' '}
--
-      </Button>
-      <Button
-        dataid={`${id}-add-button`}
-        clicked={() => add(id, price, label)}
-        btnType="Success"
-      >
-        {' '}
-+
-      </Button>
+      </span>
+      <div>
+        <Button
+          dataid={`${id}-remove-button`}
+          clicked={() => remove(id)}
+          btnType="Danger"
+        >
+          {' '}
+  -
+        </Button>
+        <Button
+          dataid={`${id}-add-button`}
+          clicked={() => add(id, price, label)}
+          btnType="Success"
+        >
+          {' '}
+  +
+        </Button>
+      </div>
     </div>
 
   </div>

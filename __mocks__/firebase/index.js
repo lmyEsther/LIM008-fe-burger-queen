@@ -11,21 +11,20 @@ const fixtureData = {
         },
       },
     },
-  },
-  // para la sección de ver ordenes
-  orders: {
-    __doc__: {
-      Pe357: {
-        clientName: 'Pedro Perez',
-        date: '12 de febrero de 2019, 09:56:40 UTC-5',
-        products: [
-          {
-            cant: 1,
-            id: 'Gas500mlSCH',
-            label: 'Gaseosa 500ml',
-            price: 10,
-          },
-        ],
+    orders: {
+      __doc__: {
+        Pe357: {
+          clientName: 'Pedro Perez',
+          date: '12 de febrero de 2019, 09:56:40 UTC-5',
+          products: [
+            {
+              cant: 1,
+              id: 'Gas500mlSCH',
+              label: 'Gaseosa 500ml',
+              price: 10,
+            },
+          ],
+        },
       },
     },
   },

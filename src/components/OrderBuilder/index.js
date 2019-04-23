@@ -7,7 +7,7 @@ import db from '../../lib/firestore';
 
 const OrderBuilder = () => {
   const [products, setProducts] = useState([]);
-  const [clientName, setNameClient] = useState('Ingresa el Nombre del Cliente');
+  const [clientName, setNameClient] = useState('');
 
   const addProductHandler = (selectedID, selectedPrice, selectedLabel) => {
     setProducts(addProduct(products, selectedID, selectedPrice, selectedLabel));
@@ -18,7 +18,7 @@ const OrderBuilder = () => {
   };
 
   const purchaseContinueHandler = () => {
-    if (products !== [] && clientName !== '') {
+    if (products !== []) {
       db().collection('/orders').add({
         products,
         clientName,

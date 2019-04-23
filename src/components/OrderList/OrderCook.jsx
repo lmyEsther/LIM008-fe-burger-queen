@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Order.module.css';
+import styles from './OrderCook.module.css';
 import Button from '../common/Button';
 
-const Order = ({
+const OrderCook = ({
   clientName, id, date, products,
 }) => {
   const [timeCook, setTimeCook] = useState(null);
@@ -14,9 +14,9 @@ const Order = ({
 
   return (
     <>
-      <div className={styles.Card}>
+      <div className={styles.Card} data-testid="order-cook">
         <div className={styles.Container}>
-          <h3 data-testid={`${id}-name`}>{clientName}</h3>
+          <h3 data-testid={`${id}-name`}>{clientName !== '' ? clientName : `Orden ${id.substr(-5)}`}</h3>
           {products && products.map(lab => <p>{`${lab.label} (${lab.cant} ud)`}</p>)}
           <Button
             dataid={`${id}-cook-button`}
@@ -51,9 +51,9 @@ const Order = ({
   );
 };
 
-export default Order;
+export default OrderCook;
 
-Order.propTypes = {
+OrderCook.propTypes = {
   date: PropTypes.number.isRequired,
   clientName: PropTypes.string.isRequired,
   products: PropTypes.arrayOf.isRequired,

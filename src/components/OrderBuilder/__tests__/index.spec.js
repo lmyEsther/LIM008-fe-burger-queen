@@ -65,12 +65,11 @@ describe('<OrderBuilder />', () => {
     const addOrderBtn = getByTestId('Ag500mlSCH-add-button');
     fireEvent.click(addOrderBtn);
 
-    // debo mockear fieldValue.serverTimestamp() o usar otro metodo, sigo investigando.
     const sendToKitchenBtn = getByTestId('send-to-kitchen');
     fireEvent.click(sendToKitchenBtn);
 
     getCollection((data) => {
-      expect(data).toHaveLength(1);
+      expect(data).toHaveLength(2);
       done();
     });
   });
