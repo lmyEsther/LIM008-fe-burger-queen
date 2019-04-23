@@ -1,4 +1,4 @@
-import { addProduct, removeProduct, estimateAmount } from '../services/pureFunctions';
+import { addProduct, removeProduct, estimateAmount } from '../product-controller';
 
 const input = [{
   cant: 1,

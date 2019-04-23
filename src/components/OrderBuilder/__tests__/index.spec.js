@@ -54,13 +54,6 @@ describe('<OrderBuilder />', () => {
         callback(orderData);
       });
     };
-    // getCollection((data) => {
-    //   expect(data).toHaveLength(0);
-    // });
-    // Quiero validar el length de la data antes de que se ejecute el evento click de enviar
-    // pero al ser un callback se ejecuta luego de que fireclick se ejecuta,
-    // por el ciclo de vida y/o el hoisting.
-    // Debe haber alguna manera asincrona de validar esto, seguiré investigando.
     const { getByTestId } = render(<OrderBuilder />);
     const addOrderBtn = getByTestId('Ag500mlSCH-add-button');
     fireEvent.click(addOrderBtn);
@@ -72,5 +65,25 @@ describe('<OrderBuilder />', () => {
       expect(data).toHaveLength(2);
       done();
     });
+  });
+
+  it('Debería cancelar una orden por completo', () => {
+    const { getByTestId, queryAllByTestId } = render(<OrderBuilder />);
+
+    let order = queryAllByTestId('order');
+    expect(order).toHaveLength(0);
+
+    const addOrder = getByTestId('Ag500mlSCH-add-button');
+    fireEvent.click(addOrder);
+    fireEvent.click(addOrder);
+
+    order = queryAllByTestId('order');
+    expect(order).toHaveLength(1);
+
+    const cancel = getByTestId('cancel-order');
+    fireEvent.click(cancel);
+
+    order = queryAllByTestId('order');
+    expect(order).toHaveLength(0);
   });
 });

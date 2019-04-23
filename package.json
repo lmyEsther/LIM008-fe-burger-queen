@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -28,7 +28,12 @@
   ],
   "jest": {
     "collectCoverageFrom": [
-      "src/components/*"
+      "src/components/OrderBuilder/*",
+      "src/components/OrderBuilder/OrderSummary/*",
+      "src/components/OrderBuilder/ProductsArea/*",
+      "src/components/OrderList/*",
+      "src/lib/product-controller.js",
+      "src/App.js"
     ]
   },
   "devDependencies": {

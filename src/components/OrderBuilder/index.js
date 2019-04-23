@@ -18,7 +18,7 @@ const OrderBuilder = () => {
   };
 
   const purchaseContinueHandler = () => {
-    if (products !== []) {
+    // if (products !== []) {
       db().collection('/orders').add({
         products,
         clientName,
@@ -27,10 +27,10 @@ const OrderBuilder = () => {
       });
       setProducts([]);
       setNameClient('');
-    } else {
-      // eslint-disable-next-line no-alert
-      alert('Por favor, llena todos los campos para enviar la orden a cocina.');
-    }
+    // } else {
+    //   // eslint-disable-next-line no-alert
+    //   alert('Por favor, llena todos los campos para enviar la orden a cocina.');
+    // }
   };
 
   const purchaseCancelHandler = () => {
