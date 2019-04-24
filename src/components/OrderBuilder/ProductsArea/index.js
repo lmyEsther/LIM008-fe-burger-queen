@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import PropTypes from 'prop-types';
 import Product from './Product';
@@ -11,14 +11,14 @@ const ProductsArea = ({
   removedProduct, addedProduct,
 }) => {
   const { error, loading, value } = useCollection(
-    db().collection('/dining').orderBy('type', 'asc'),
+    db().collection('/dining'),
   );
 
   const [choice, setChoice] = useState('burger');
 
   return (
     <>
-      <div className={styles.productsArea}>
+      <section className={styles.productsArea}>
         <h3>Selecciona el producto de preferencia: </h3>
         <NavChoice setType={(type) => setChoice(type)} />
         {error && (
@@ -29,9 +29,10 @@ Error:
         </p>
         )}
         {loading && <Spinner dataid="spinner-loading">Valar Morghulis</Spinner>}
-        {value && (
+        {value && choice ? (
         <div>
-          {value.docs.map(doc => (
+          {value.docs.filter(doc => doc.data().type === choice)
+          .map(doc => (
             <Product
               key={doc.id}
               id={doc.id}
@@ -42,8 +43,8 @@ Error:
             />
           ))}
         </div>
-        )}
-      </div>
+        ) : null}
+      </section>
     </>
   );
 };

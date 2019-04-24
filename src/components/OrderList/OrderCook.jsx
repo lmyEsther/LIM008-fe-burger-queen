@@ -17,7 +17,7 @@ const OrderCook = ({
       <div className={styles.Card} data-testid="order-cook">
         <div className={styles.Container}>
           <h3 data-testid={`${id}-name`}>{clientName !== '' ? clientName : `Orden ${id.substr(-5)}`}</h3>
-          {products && products.map(lab => <p>{`${lab.label} (${lab.cant} ud)`}</p>)}
+          {products && products.map(lab => <p>{`(${lab.cant} ud) ${lab.label}`}</p>)}
           <Button
             dataid={`${id}-cook-button`}
             clicked={() => {

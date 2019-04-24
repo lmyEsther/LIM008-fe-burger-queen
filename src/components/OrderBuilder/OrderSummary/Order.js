@@ -9,7 +9,7 @@ const order = ({
     <h5
       data-testid={`${id}-label`}
     >
-      {`${label} [${cant}] Sub-Total: ./S ${subTotal}`}
+      {`[${cant}] ${label} Monto: S/ ${subTotal}`}
     </h5>
   </div>
 );

@@ -25,30 +25,28 @@ const orderSummary = ({
 
   return (
     <>
-      <div className={styles.OrderSummary}>
+      <section className={styles.OrderSummary}>
         <h3>Resumen de Pedido</h3>
-        <div>
-          {dinamicProduct}
-        </div>
-        <div>
-          <h5>
-Monto Total a Pagar:
-            {' '}
-            {totalAmount}
-          </h5>
-          <input
+        <input
             data-testid="name-client"
             type="text"
             value={clientName}
             placeholder="Ingresa el nombre del cliente"
             onChange={captureNameClient}
           />
+        <div>
+          {dinamicProduct}
+          <h5>
+Monto Total a Pagar:
+            {' '}
+            {totalAmount}
+          </h5>
         </div>
         <div>
           <Button clicked={purchaseCancelled} btnType="Danger" dataid="cancel-order">Cancelar</Button>
           <Button clicked={purchaseContinued} btnType="Success" dataid="send-to-kitchen">Continuar</Button>
         </div>
-      </div>
+      </section>
     </>
   );
 };
