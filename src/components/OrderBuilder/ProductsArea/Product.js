@@ -10,7 +10,7 @@ const product = ({
     <div className={styles.Container}>
       <h5 data-testid={`${id}-label`}>{label}</h5>
       <span>
- ./S
+ S/ 
         {' '}
         {price}
       </span>

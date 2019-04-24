@@ -19,14 +19,14 @@ const OrderBuilder = () => {
 
   const purchaseContinueHandler = () => {
     // if (products !== []) {
-      db().collection('/orders').add({
-        products,
-        clientName,
-        date: Date.now(),
-        totalAmount: estimateAmount(products),
-      });
-      setProducts([]);
-      setNameClient('');
+    db().collection('/orders').add({
+      products,
+      clientName,
+      date: Date.now(),
+      totalAmount: estimateAmount(products),
+    });
+    setProducts([]);
+    setNameClient('');
     // } else {
     //   // eslint-disable-next-line no-alert
     //   alert('Por favor, llena todos los campos para enviar la orden a cocina.');

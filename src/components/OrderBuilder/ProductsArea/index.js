@@ -2,6 +2,7 @@ import React from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import PropTypes from 'prop-types';
 import Product from './Product';
+import NavChoice from './NavChoice';
 import db from '../../../lib/firestore';
 import styles from './ProductsArea.module.css';
 import Spinner from '../../common/Spinner';
@@ -13,10 +14,13 @@ const ProductsArea = ({
     db().collection('/dining').orderBy('type', 'asc'),
   );
 
+  const [choice, setChoice] = useState('burger');
+
   return (
     <>
       <div className={styles.productsArea}>
         <h3>Selecciona el producto de preferencia: </h3>
+        <NavChoice setType={(type) => setChoice(type)} />
         {error && (
         <p data-testid="error">
 Error:
