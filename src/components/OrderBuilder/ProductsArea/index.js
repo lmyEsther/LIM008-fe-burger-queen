@@ -8,7 +8,7 @@ import styles from './ProductsArea.module.css';
 import Spinner from '../../common/Spinner';
 
 const ProductsArea = ({
-  removedProduct, addedProduct,
+  addedProduct,
 }) => {
   const { error, loading, value } = useCollection(
     db().collection('/dining'),
@@ -20,7 +20,7 @@ const ProductsArea = ({
     <>
       <section className={styles.productsArea}>
         <h3>Selecciona el producto de preferencia: </h3>
-        <NavChoice setType={(type) => setChoice(type)} />
+        <NavChoice setType={type => setChoice(type)} />
         {error && (
         <p data-testid="error">
 Error:
@@ -30,19 +30,18 @@ Error:
         )}
         {loading && <Spinner dataid="spinner-loading">Valar Morghulis</Spinner>}
         {value && choice ? (
-        <div>
-          {value.docs.filter(doc => doc.data().type === choice)
-          .map(doc => (
-            <Product
-              key={doc.id}
-              id={doc.id}
-              label={doc.data().label}
-              price={doc.data().price}
-              remove={removedProduct}
-              add={addedProduct}
-            />
-          ))}
-        </div>
+          <div>
+            {value.docs.filter(doc => doc.data().type === choice)
+              .map(doc => (
+                <Product
+                  key={doc.id}
+                  id={doc.id}
+                  label={doc.data().label}
+                  price={doc.data().price}
+                  add={addedProduct}
+                />
+              ))}
+          </div>
         ) : null}
       </section>
     </>

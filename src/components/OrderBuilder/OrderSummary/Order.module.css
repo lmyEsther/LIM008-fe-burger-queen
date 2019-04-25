@@ -4,6 +4,8 @@
     border-radius: 5px;
     padding: 3px;
     text-align: left;
+    display: flex;
+    justify-content: space-between;
   }
   
   .Card:hover {

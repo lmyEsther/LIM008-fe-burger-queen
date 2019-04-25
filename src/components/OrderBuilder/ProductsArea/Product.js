@@ -4,25 +4,17 @@ import styles from './Product.module.css';
 import Button from '../../common/Button';
 
 const product = ({
-  label, price, remove, add, id,
+  label, price, add, id,
 }) => (
   <div className={styles.Card}>
     <div className={styles.Container}>
       <h5 data-testid={`${id}-label`}>{label}</h5>
       <span>
- S/ 
+ S/
         {' '}
         {price}
       </span>
       <div>
-        <Button
-          dataid={`${id}-remove-button`}
-          clicked={() => remove(id)}
-          btnType="Danger"
-        >
-          {' '}
-  -
-        </Button>
         <Button
           dataid={`${id}-add-button`}
           clicked={() => add(id, price, label)}
@@ -42,7 +34,6 @@ export default product;
 product.propTypes = {
   label: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  remove: PropTypes.func.isRequired,
   add: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };
