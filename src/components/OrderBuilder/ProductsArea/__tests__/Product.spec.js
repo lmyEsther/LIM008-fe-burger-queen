@@ -11,10 +11,10 @@ describe('<Product />', () => {
     expect(label.textContent).toBe('producto1');
   });
   it('ejecuta funcion de add', () => {
-    const add = jest.fn();
-    const { getByTestId } = render(<Product id="123" add={add} />);
+    const funcioncita = jest.fn();
+    const { getByTestId } = render(<Product id="123" add={funcioncita} />);
     const button = getByTestId('123-add-button');
-    expect(add.mock.calls).toHaveLength(0);
+    expect(funcioncita.mock.calls).toHaveLength(0);
     fireEvent.click(button);
     expect(add.mock.calls).toHaveLength(1);
   });

@@ -51,6 +51,7 @@ Error:
                   timeFinished={doc.data().timeFinished}
                   date={doc.data().date}
                   changeStatus={changeStatusHandler}
+                  status={doc.data().status}
                 />
               ))}
           </div>

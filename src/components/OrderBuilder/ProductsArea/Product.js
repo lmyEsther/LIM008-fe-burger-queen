@@ -6,7 +6,7 @@ import Button from '../../common/Button';
 const product = ({
   label, price, add, id,
 }) => (
-  <div className={styles.Card}>
+  <div type="button" className={styles.Card} onClick={()=>{alert('hola')}}>
     <div className={styles.Container}>
       <h5 data-testid={`${id}-label`}>{label}</h5>
       <span>

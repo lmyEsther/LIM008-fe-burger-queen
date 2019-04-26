@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './NavChoice.module.css';
 
 const navChoice = ({ setStatus }) => (
-  <div>
+  <div className={styles.NavChoice}>
     <button type="button" onClick={() => setStatus('cook')}>En Preparación</button>
     <button type="button" onClick={() => setStatus('serve')}>Listas Para Servir</button>
     <button type="button" onClick={() => setStatus('finished')}>Finalizadas</button>

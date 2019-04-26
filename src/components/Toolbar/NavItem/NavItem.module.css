@@ -1,5 +1,5 @@
 .NavItem {
-    margin: 0;
+    margin: 0.3em;
     box-sizing: border-box;
     display: block;
     width: 100%;
@@ -13,7 +13,7 @@
     display: block;
     font-weight: bold;
     float: right;
-    border-radius: 5px;
+    border-radius: 2px;
 
 }
 
@@ -39,7 +39,6 @@
         padding: 16px 10px;
         font-weight: bold;
         background-color: #7D0000;
-
     }
     
     .NavItem a:hover,
