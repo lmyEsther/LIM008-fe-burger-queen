@@ -1,32 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Product.module.css';
-import Button from '../../common/Button';
 
 const product = ({
   label, price, add, id,
 }) => (
-  <div type="button" className={styles.Card} onClick={()=>{alert('hola')}}>
-    <div className={styles.Container}>
-      <h5 data-testid={`${id}-label`}>{label}</h5>
-      <span>
+  <button
+    type="button"
+    className={styles.Card}
+    data-testid={`${id}-add-button`}
+    onClick={() => add(id, price, label)}
+  >
+    <p data-testid={`${id}-label`}>{label}</p>
+    <p>
  S/
-        {' '}
-        {price}
-      </span>
-      <div>
-        <Button
-          dataid={`${id}-add-button`}
-          clicked={() => add(id, price, label)}
-          btnType="Success"
-        >
-          {' '}
-  +
-        </Button>
-      </div>
-    </div>
+      {' '}
+      {price}
+    </p>
 
-  </div>
+  </button>
 );
 
 export default product;

@@ -29,7 +29,6 @@ const OrderList = () => {
   return (
     <>
       <section className={styles.OrderList}>
-        <h3>Histórico de Ordenes</h3>
         <NavChoice setStatus={status => setChoice(status)} />
         {error && (
         <p data-testid="error2">

@@ -1,18 +1,20 @@
 .NavChoice {
-    margin-bottom: 10px;
+    margin: 0 auto;
 }
 
 .NavChoice button {
-    float: left;
+    display: inline-block;
     color: #EAA81B;
     height: 100%;
-    width: 30%;
-    padding: 16px 10px;
+    width: 33.33%;
+    padding: 10px;
+    font: inherit;
     font-weight: bold;
     background-color: #7D0000;
+    border: none;
+    border-bottom: 4px solid transparent;
 }
 
 .NavChoice button:focus {
-    background-color: #7D0000;
     border-bottom: 4px solid #EAA81B;
 }

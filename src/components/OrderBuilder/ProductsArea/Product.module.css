@@ -1,17 +1,13 @@
 .Card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+    transition: 0.2s;
     border-radius: 5px;
     float: left;
-    width: 150px;
-    height: 150px;
+    width: 33.33%;
+    height: 100px;
 
   }
-  
-  .Card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  .Container {
-    padding: 0 10px;
-  }
+
+.Card:active {
+  background-color: rgb(116, 50, 3);
+}

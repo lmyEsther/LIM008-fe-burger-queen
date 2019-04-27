@@ -10,8 +10,10 @@ const OrderCook = ({
       <div className={styles.Container}>
         <h3 data-testid={`${id}-name`}>{clientName !== '' ? clientName : `Orden ${id.substr(-5)}`}</h3>
         {products && products.map(lab => <p>{`(${lab.cant} ud) ${lab.label}`}</p>)}
-        {status === 'cook' && 
-        (<button
+        {status === 'cook'
+        && (
+        <button
+          type="button"
           data-testid={`${id}-cook-button`}
           onClick={() => {
             changeStatus(id, 'serve', date, Date.now());
@@ -20,10 +22,13 @@ const OrderCook = ({
         >
           {' '}
   Servir
-        </button>)}
-        
-        {status === 'serve' && 
-        (<button
+        </button>
+        )}
+
+        {status === 'serve'
+        && (
+        <button
+          type="button"
           dataid={`${id}-serve-button`}
           onClick={() => {
             changeStatus(id, 'finished', date, Date.now());
@@ -31,8 +36,9 @@ const OrderCook = ({
         >
           {' '}
   Completado
-        </button>)}
-        {timeFinished > 0 && (<h5>{`Se han demorado ${Math.round((timeFinished / 1000) / 60)} min para despechar esta orden`}</h5>)}
+        </button>
+        )}
+        {timeFinished > 0 && (<h5>{`Tiempo de demora: ${Math.round((timeFinished / 1000) / 60)} min.`}</h5>)}
       </div>
 
     </div>
@@ -47,4 +53,5 @@ OrderCook.propTypes = {
   products: PropTypes.arrayOf.isRequired,
   id: PropTypes.string.isRequired,
   changeStatus: PropTypes.func.isRequired,
+  status: PropTypes.string.isRequired,
 };
