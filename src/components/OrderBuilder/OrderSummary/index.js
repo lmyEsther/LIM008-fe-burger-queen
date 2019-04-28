@@ -19,6 +19,7 @@ const orderSummary = ({
         subTotal={pro.cant * pro.price}
         remove={removedProduct}
         add={addedProduct}
+        price={pro.price}
       />
     ));
 

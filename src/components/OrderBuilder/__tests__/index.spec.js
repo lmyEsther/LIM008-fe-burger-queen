@@ -15,7 +15,7 @@ describe('<OrderBuilder />', () => {
     let order = queryAllByTestId('order');
     expect(order).toHaveLength(0);
 
-    const addOrder = getByTestId('Ag500mlSCH-add-button');
+    const addOrder = getByTestId('HDobP345-add-button');
     fireEvent.click(addOrder);
 
     order = queryAllByTestId('order');
@@ -28,13 +28,13 @@ describe('<OrderBuilder />', () => {
     let order = queryAllByTestId('order');
     expect(order).toHaveLength(0);
 
-    const addOrder = getByTestId('Ag500mlSCH-add-button');
+    const addOrder = getByTestId('HDobP345-add-button');
     fireEvent.click(addOrder);
 
     order = queryAllByTestId('order');
     expect(order).toHaveLength(1);
 
-    const removeOrder = getByTestId('Ag500mlSCH-remove-button');
+    const removeOrder = getByTestId('HDobP345-remove-button-order');
     fireEvent.click(removeOrder);
 
     order = queryAllByTestId('order');
@@ -55,14 +55,14 @@ describe('<OrderBuilder />', () => {
       });
     };
     const { getByTestId } = render(<OrderBuilder />);
-    const addOrderBtn = getByTestId('Ag500mlSCH-add-button');
+    const addOrderBtn = getByTestId('HDobP345-add-button');
     fireEvent.click(addOrderBtn);
 
     const sendToKitchenBtn = getByTestId('send-to-kitchen');
     fireEvent.click(sendToKitchenBtn);
 
     getCollection((data) => {
-      expect(data).toHaveLength(2);
+      expect(data).toHaveLength(4);
       done();
     });
   });
@@ -73,9 +73,9 @@ describe('<OrderBuilder />', () => {
     let order = queryAllByTestId('order');
     expect(order).toHaveLength(0);
 
-    const addOrder = getByTestId('Ag500mlSCH-add-button');
-    fireEvent.click(addOrder);
-    fireEvent.click(addOrder);
+    const addOrder = getByTestId('HDobP345-add-button');
+    fireEvent.click(addOrder); // agrega el producto
+    fireEvent.click(addOrder); // suma uno a la cantidad actual: 1
 
     order = queryAllByTestId('order');
     expect(order).toHaveLength(1);
@@ -85,5 +85,13 @@ describe('<OrderBuilder />', () => {
 
     order = queryAllByTestId('order');
     expect(order).toHaveLength(0);
+  });
+
+  it('Debería capturar el nombre del cliente', () => {
+    const { getByTestId } = render(<OrderBuilder />);
+
+    const input = getByTestId('name-client');
+    fireEvent.change(input, { target: { value: 'Ruth García' } });
+    expect(input.value).toBe('Ruth García');
   });
 });

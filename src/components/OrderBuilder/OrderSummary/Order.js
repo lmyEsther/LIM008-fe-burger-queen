@@ -13,7 +13,7 @@ const order = ({
       {`[${cant}] ${label} Monto: S/ ${subTotal}`}
     </h5>
     <Button
-      dataid={`${id}-remove-button`}
+      dataid={`${id}-remove-button-order`}
       clicked={() => remove(id)}
       btnType="Danger"
     >
@@ -21,7 +21,7 @@ const order = ({
 -
     </Button>
     <Button
-      dataid={`${id}-add-button`}
+      dataid={`${id}-add-button-order`}
       clicked={() => add(id, price, label)}
       btnType="Success"
     >

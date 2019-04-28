@@ -18,10 +18,10 @@ const OrderList = () => {
       db().collection('orders').doc(id).update({
         status: currentStatus,
       });
-    } else if (currentStatus === 'finished') {
+    } else {
       db().collection('orders').doc(id).update({
         status: currentStatus,
-        timeFinished: currentDate - date,
+        timeFinished: Math.round(((currentDate - date) / 1000) / 60),
       });
     }
   };
@@ -38,7 +38,7 @@ Error:
         </p>
         )}
         {loading && <Spinner dataid="spinner-loading2">Valar Morghulis</Spinner>}
-        {value && choice ? (
+        {value && (
           <div>
             {value.docs.filter(doc => doc.data().status === choice)
               .map(doc => (
@@ -54,7 +54,7 @@ Error:
                 />
               ))}
           </div>
-        ) : null}
+        )}
       </section>
     </>
   );

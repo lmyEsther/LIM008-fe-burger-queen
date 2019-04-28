@@ -28,7 +28,7 @@ Error:
         </p>
         )}
         {loading && <Spinner dataid="spinner-loading">Valar Morghulis</Spinner>}
-        {value && choice ? (
+        {value && (
           <div>
             {value.docs.filter(doc => doc.data().type === choice)
               .map(doc => (
@@ -41,7 +41,7 @@ Error:
                 />
               ))}
           </div>
-        ) : null}
+        )}
       </section>
     </>
   );
@@ -50,6 +50,5 @@ Error:
 export default ProductsArea;
 
 ProductsArea.propTypes = {
-  removedProduct: PropTypes.func.isRequired,
   addedProduct: PropTypes.func.isRequired,
 };

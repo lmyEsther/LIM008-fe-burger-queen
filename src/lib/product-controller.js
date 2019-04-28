@@ -27,7 +27,7 @@ export const removeProduct = (arr, currentID) => {
   let result = [...arr];
   if (arr.find(ele => ele.id === currentID && ele.cant === 1)) {
     result = arr.filter(e => e.id !== currentID);
-  } else if (arr.find(ele => ele.id === currentID)) {
+  } else {
     result = arr.map((ele) => {
       const newElem = { ...ele };
       if (newElem.id === currentID && newElem.cant > 1) {

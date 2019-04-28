@@ -18,21 +18,16 @@ const OrderBuilder = () => {
   };
 
   const purchaseContinueHandler = () => {
-    if (products !== []) {
-      db().collection('/orders').add({
-        products,
-        clientName,
-        date: Date.now(),
-        totalAmount: estimateAmount(products),
-        status: 'cook',
-        timeFinished: 0,
-      });
-      setProducts([]);
-      setNameClient('');
-    } else {
-      // eslint-disable-next-line no-alert
-      alert('Por favor, llena todos los campos para enviar la orden a cocina.');
-    }
+    db().collection('/orders').add({
+      products,
+      clientName,
+      date: Date.now(),
+      totalAmount: estimateAmount(products),
+      status: 'cook',
+      timeFinished: 0,
+    });
+    setProducts([]);
+    setNameClient('');
   };
 
   const purchaseCancelHandler = () => {
@@ -50,7 +45,7 @@ const OrderBuilder = () => {
         products={products}
         totalAmount={estimateAmount(products)}
         clientName={clientName}
-        captureNameClient={event => setNameClient(event.target.value)}
+        captureNameClient={event => setNameClient(event.target.value)} // pendiente por test unit
         removedProduct={removeProductHandler}
         addedProduct={addProductHandler}
         purchaseContinued={purchaseContinueHandler}

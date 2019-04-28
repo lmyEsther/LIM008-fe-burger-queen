@@ -10,20 +10,17 @@ describe('<Product />', () => {
     const label = getByTestId('123-label');
     expect(label.textContent).toBe('producto1');
   });
+  it('pinta bien el precio', () => {
+    const { getByTestId } = render(<Product id="123" price={6} />);
+    const label = getByTestId('123-price');
+    expect(label.textContent).toBe('S/ 6');
+  });
   it('ejecuta funcion de add', () => {
-    const funcioncita = jest.fn();
-    const { getByTestId } = render(<Product id="123" add={funcioncita} />);
+    const add = jest.fn();
+    const { getByTestId } = render(<Product id="123" add={add} />);
     const button = getByTestId('123-add-button');
-    expect(funcioncita.mock.calls).toHaveLength(0);
+    expect(add.mock.calls).toHaveLength(0);
     fireEvent.click(button);
     expect(add.mock.calls).toHaveLength(1);
-  });
-  it('ejecuta función de remove', () => {
-    const remove = jest.fn();
-    const { getByTestId } = render(<Product id="123" remove={remove} />);
-    const button = getByTestId('123-remove-button');
-    expect(remove.mock.calls).toHaveLength(0);
-    fireEvent.click(button);
-    expect(remove.mock.calls).toHaveLength(1);
   });
 });
