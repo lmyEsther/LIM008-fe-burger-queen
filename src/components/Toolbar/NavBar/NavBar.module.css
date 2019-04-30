@@ -2,9 +2,15 @@
     padding: 0;
     list-style: none;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     align-items: center;
     height: 100%;
     float: right;
     margin: 0.5em 0 0.5em 0;
+}
+
+@media (min-width: 500px) {
+    .NavBar {
+        flex-flow: row;
+    }
 }

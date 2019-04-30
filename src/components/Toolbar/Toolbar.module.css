@@ -15,9 +15,18 @@
 .Toolbar h1 {
     font-family: 'Cormorant Unicase';
     color: #7D0000;
-    padding-right: 15%;
+    float: left;
 }
 
 .Logo {
     height: 100%;
+}
+
+@media (max-width: 499px) {
+    .TabletOnlyPlus {
+        display: none;
+    }
+    .Toolbar h1 {
+        font-size: 28px;
+    }
 }
