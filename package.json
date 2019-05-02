@@ -1,0 +1,53 @@
+{
+  "name": "burger-queen",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "firebase": "^5.9.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-firebase-hooks": "^1.1.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --coverage",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/OrderBuilder/*",
+      "src/components/OrderBuilder/OrderSummary/*",
+      "src/components/OrderBuilder/ProductsArea/*",
+      "src/components/OrderList/*",
+      "src/lib/product-controller.js",
+      "src/App.js"
+    ]
+  },
+  "devDependencies": {
+    "@firebase/app-types": "0.x",
+    "@firebase/util": "0.x",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "mock-cloud-firestore": "^0.9.2",
+    "react-testing-library": "^6.1.2"
+  }
+}

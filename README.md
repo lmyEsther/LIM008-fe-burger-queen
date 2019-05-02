@@ -1,26 +1,4 @@
-# Burger Queen
-
-## Preámbulo
-
-[React](https://reactjs.org/) y [Angular](https://angular.io/)
-son algunos de los _frameworks_ y _librerías_ de JavaScript más utilizados por
-lxs desarrolladorxs alrededor del mundo, y hay una razón para eso.
-En el contexto del navegador, [_mantener la interfaz sincronizada con el estado
-es difícil_](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445).
-Al elegir un _framework_ o _librería_ para nuestra interfaz, nos apoyamos en una
-serie de convenciones e implementaciones _probadas_ y _documentadas_ para
-resolver un problema común a toda interfaz web. Esto nos permite concentrarnos
-mejor (dedicar más tiempo) en las caractrísticas _específicas_ de
-nuestra aplicación.
-
-Cuando elegimos una de estas tecnologías no solo importamos un pedacito de
-código para reusarlo (lo cuál es un gran valor per se), si no que adoptamos una
-**arquitectura**, una serie de **principios de diseño**, un **paradigma**, unas
-**abstracciones**, un **vocabulario**, una **comunidad**, etc...
-
-Como desarrolladora Front-end, estos kits de desarrollo pueden resultarte
-de gran ayuda para implementar rápidamente características de los proyectos en
-los que trabajes.
+# Burger Queen con React
 
 ## Resumen del proyecto
 
@@ -82,83 +60,6 @@ costo total.
 
 ![out](https://user-images.githubusercontent.com/110297/45984241-b8b51c00-c025-11e8-8fa4-a390016bee9d.gif)
 
-## Objetivos de aprendizaje
-
-1. El objetivo principal de es aprender a construir una _interfaz web_ usando
-el _framework_ elegido (React o Angular). Todos estos frameworks de
-Front-end atacan el mismo problema: **cómo mantener la interfaz y el estado
-sincronizados**. Así que esta experiencia espera familiarizarte con el concepto
-de _estado de pantalla_, y cómo cada cambio sobre el estado se va a
-ir reflejando en la interfaz (por ejemplo, cada vez que agregamos un _producto_
-a un _pedido_, la interfaz debe actualizar la lista del pedido y el total).
-
-2. Como objetivo secundario, deberás seguir las recomendaciones para PWAs
-(_Progressive Web Apps_), lo cual incluye conceptos como **offline**. Para
-guiarte con respecto a este tema te recomendamos usar [Lighthouse](https://developers.google.com/web/tools/lighthouse/?hl=es),
-que es una herramienta de Google que nos ayuda a asegurar que nuestras web apps
-sigan "buenas prácticas". De hecho, usaremos Lighthouse a la hora de evaluar el
-proyecto.
-
-3. Finalmente, la interfaz debe estar diseñada específicamente para correr en
-**tablets**.
-
-Tópicos: _react_, _angular_, _pwa_, _offline-first_, _service-worker_.
-
-## Consideraciones
-
-Este proyecto se debe "resolver" de forma individual.
-
-Trabaja en una historia hasta terminarla antes de pasar a la siguiente. Trabaja
-hasta la historia que puedas en el tiempo especificado.
-
-La lógica del proyecto debe estar implementada completamente en JavaScript
-(ES6+), HTML y CSS y empaquetada de manera automatizada.
-En este proyecto Sí está permitido usar librerías o frameworks
-(debes elegir entre [React](https://reactjs.org/) o
-[Angular](https://angular.io/)).
-
-La aplicación debe ser un _Single Page App_. Los pedidos los tomaremos desde una
-_tablet_, pero **no queremos una app nativa**, sino una web app que sea
-**responsive** y pueda funcionar **offline**.
-
-Necesitamos pensar bien en el aspecto UX de de quienes van a tomar los pedidos,
- el tamaño y aspecto de los botones, la visibilidad del estado actual del
- pedido, etc.
-
-La aplicación desplegada debe tener 80% o más el las puntuaciones de
-Performance, Progressive Web App, Accessibility y Best Practices de Lighthouse.
-
-La aplicación debe hacer uso de `npm-scripts` y contar con scripts `start`,
-`test`, `build` y `deploy`, que se encarguen de arrancar, correr las pruebas,
-empaquetar y desplegar la aplicación respectivamente.
-
-Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,
-_lines_ y _branches_.
-
-Este proyecto incluye un _boilerplate_ con el código necesario para arrancar con
-la parte de backend ya resuelta. El _boilerplate_ incluye los siguientes
-archivos/carpetas con la configuración de Fierbase (hosting, firestore y
-functions):
-
-```text
-./04-burger-queen/
-├── firebase.json
-├── firestore.indexes.json
-├── firestore.rules
-├── functions
-│   ├── index.js
-│   ├── package.json
-└── README.md
-
-```
-
-Por otro lado, la parte de la interfaz no está incluida, por lo que, deberás
-definir la estructura de carpetas y archivos que consideres necesaria. Puedes
-guiarte de las convenciones del _framework_ elegido. Por ende, los _tests_ y el
-_setup_ necesario para ejecutarlos, serán hechos por ti.
-
-Para comenzar este proyecto tendrás que hacer un _fork_ y _clonar_ este
-repositorio.
 
 ## Criterios de aceptación del proyecto
 
@@ -228,149 +129,9 @@ rápidamente a los clientes que las hicieron.
 
 ---------------------
 
-## Habilidades involucradas en el proyecto
-
-### Blandas
-
-| Habilidad |
-|-----------|
-| Planificación, organización y manejo del tiempo |
-| Autoaprendizaje |
-| Presentaciones |
-| Adaptabilidad |
-| Solución de problemas |
-| Trabajo en equipo |
-| Responsabilidad |
-| Dar y recibir feedback |
-| Comunicación eficaz |
-
-### Técnicas, Front-end
-
-| Habilidad |
-|-----------|
-| **Computer Science** |
-| Lógica |
-| Arquitectura |
-| **Source Control Management** |
-| Git |
-| GitHub |
-| **JavaScript** |
-| Estilo |
-| Nomenclatura/semántica |
-| Funciones/modularidad |
-| Estructuras de datos |
-| Tests |
-| **HTML** |
-| Validación |
-| Estilo |
-| Semántica |
-| **CSS** |
-| DRY |
-| Responsive |
-
-
-### Técnicas, UX
-
-| Habilidad |
-|-----------|
-| **Investigación (_Reseacrh_)** |
-| User Centricity (_Diseño Centrado en el Usuario_)|
-| **Diseño Visual (_Visual Design_)** |
-
-***
-
-## Primeros pasos
-
-1. El primer paso de este proyecto debe ser convertir el menú descrito por el
-cliente en una estructura que podamos poner en un archivo JSON para después
-_pintar_ en la pantalla
-
-2. Haz un _fork_ de este repo (en GitHub).
-
-3. Clona tu _fork_ en tu computadora:
-
-   ```sh
-   git clone git@github.com:<tu-usuario-de-github>/<cohortid>-burger-queen.git
-   cd <cohortid>-burger-queen
-   ```
-
-4. Crea una rama a partir de `master` para empezar a trabajar. Por ejemplo:
-
-   ```sh
-   git checkout -b develop
-   ```
-
-5. Crear proyecto en [Firebase](https://firebase.google.com/)
-
-6. Habilitar Firestore (_comenzar en modo bloqueado_) en sección de "Bases de
-   Datos" de [Firebase console](https://console.firebase.google.com/).
-
-7. Instalar utilidad de línea de comando de Firebase:
-
-   ```sh
-   npm i -g firebase-tools
-   ```
-8. Ahora usa el siguiente comando para acceder con tu cuenta de Google:
-
-   ```sh
-   firebase login
-   ```
-
-9. Agregamos entorno de producción para desplegar:
-
-   ```sh
-   firebase use --add
-   ```
-  Elige el proyecto de Firebase y un alias:
-
-  ![image](https://user-images.githubusercontent.com/25906896/46550922-06d6e480-c89c-11e8-8ee1-7cdbe0445884.png)
-
-
-10. Instalar dependencias de cloud functions:
-
-   ```sh
-   # usando yarn
-   cd functions && yarn && cd ..
-   # alternativamente, usando npm
-   cd functions && npm install && cd ..
-   ```
-
-11. Desplegar:
-
-   ```sh
-   firebase deploy
-   ```
-
-12. Llegado a este punto ya puedes comenzar con el _front-end_ :wink:
-
-***
-
-Nota para estudiantes que elijan React y quieran usar `create-react-app`:
-
-Si tratas de usar `create-react-app` en el directorio del proyecto recibirás un
-error diciendo que hay archivos que podrían presentar un conflicto. Para evitar
-este problema puedes crear una nueva app usando `create-react-app` y de ahí
-_mezclarla_ con la carpeta del proyecto:
-
-```sh
-# si estabase en la carpeta del proyecto, salimos a la carpeta de más arriba
-cd ..
-
-create-react-app burger-queen-tmp
-cp -r burger-queen/* burger-queen-tmp/
-cp -r burger-queen-tmp/.gitignore burger-queen-tmp/* burger-queen/
-rm -rf burger-queen-tmp
-cd burger-queen
-```
-
-***
-
-## Pistas / Tips
-
 ### Frameworks / libraries
 
 * [React](https://reactjs.org/)
-* [Angular](https://angular.io/)
 
 ### Herramientas
 
@@ -396,3 +157,16 @@ cd burger-queen
 ### Cloud functions
 
 * [Cloud functions - Firebase Docs](https://firebase.google.com/docs/functions/?hl=es-419)
+
+### Cross Testing
+
+![test-unit](https://user-images.githubusercontent.com/45083990/57082421-4ba0ed80-6cbc-11e9-97b4-dff9ac94c50f.png)
+
+## Vistas
+
+![vista1](https://user-images.githubusercontent.com/45083990/57082536-860a8a80-6cbc-11e9-9903-ce89ad55e7a1.png)
+![vista2](https://user-images.githubusercontent.com/45083990/57082541-87d44e00-6cbc-11e9-9525-8ee120f44e42.png)
+![vista3](https://user-images.githubusercontent.com/45083990/57082543-899e1180-6cbc-11e9-98c5-e7149611f012.png)
+
+
+

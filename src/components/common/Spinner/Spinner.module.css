@@ -1,0 +1,26 @@
+.spinner,.spinner:after{
+    display: block;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+ }
+.spinner {
+    margin: 55px auto;
+    position: relative;
+    background-color: transparent;
+    border-top: 0.6em solid #C95501;
+    border-right: 0.6em solid #C95501;
+    border-bottom: 0.6em solid #C95501;
+    border-left: 0.6em solid rgba(66,139,202,.2);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: .9s;
+    animation-name: spinner-loading
+ }
+@keyframes spinner-loading{
+  0% {
+      transform: rotate(0deg)
+  } to {
+      transform: rotate(1turn)
+  }
+}

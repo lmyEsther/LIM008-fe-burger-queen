@@ -1,0 +1,31 @@
+.Button {
+    background-color: transparent;
+    border: none;
+    color: #EAA81B;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 5px;
+    float: center;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.Success {
+    background-color: rgb(116, 50, 3);
+}
+.Success:active {
+    background-color: #EAA81B;
+    color: rgb(116, 50, 3);
+}
+
+.Danger {
+    border: 1px solid rgb(116, 50, 3);
+    color: rgb(116, 50, 3);
+}
+.Danger:active {
+    background-color: rgb(116, 50, 3);
+    color: #EAA81B;
+}

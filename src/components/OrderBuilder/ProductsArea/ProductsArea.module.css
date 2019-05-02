@@ -1,0 +1,14 @@
+.productsArea {
+    padding: 0;
+    margin: 0;
+    display: block;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 60%;
+    float: left;
+    text-align: center;
+}
+
+.productsArea h3 {
+    color: #EAA81B;
+}
